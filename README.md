@@ -3,7 +3,7 @@ NgxPagination in angular and ionic
 
 # Process
 
-1 = npm install ngx-pagination 
+    npm install ngx-pagination 
 
 2 = import   NgxPaginationModule   from 'ngx-pagination'; in app.module.ts 
 
