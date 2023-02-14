@@ -1,0 +1,43 @@
+
+
+<ion-content>
+
+  <style>
+    .table{border: 2px solid rgb(168, 92, 92);padding: 5px;width: 100%;}
+    .thead{background: red; color: white;}
+    table tr td,th {padding: 6px;text-align: center;}
+  </style>
+  <div class="container">
+    <h3 class="text-center mt-5 mb-5">Pagination Example 1</h3>
+    <p>Process </p>
+    <p>1 = npm install ngx-pagination </p>
+    <p>2 = import   NgxPaginationModule   from 'ngx-pagination'; in app.module.ts </p>
+    <p>3 = and add ts code </p><br>
+  
+    <table class="table" border="2">
+      <thead class="thead">
+        <tr>
+          <th>SR.</th>
+          <th>Year</th>
+          <th>Make</th>
+          <th>Model</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of Data | paginate : {itemsPerPage: tableSize,  currentPage: page,  totalItems: count};let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{ post.year }}</td>
+          <td>{{ post.make }}</td>
+          <td>{{ post.model }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+</ion-content>
